@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            width: 1024px;
+            height: 694px;
+            border: solid 1px orangered;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 1.绝对定位的元素参照离他最近的已经定位的祖先元素进行偏移，如果没有，则参照窗口进行偏移
+           2.绝对定位的元素会脱流，在文档中不占位，可以手动设置宽高 
+           父相子绝：父元素设置相对定位，子元素绝对定位，参照已定位的父元素偏移*/
+        #parent>#child {
+            width: 1024px;
+            height: 35px;
+            background-color: rgba(0, 0, 255, 0.5);
+            position: absolute;
+            /* left: 8px; */
+            /* top: 5px; */
+            bottom: 0;
+            color: #fff;
+            text-align: center;
+        }
+        img{
+            /* 子元素可以设置为百分比的宽度，这个百分比相对于它的父元素 */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <img src="imgs/img01.jpeg" alt="">
+        <div id="child">
+            一元代金券
+        </div>
+    </div>
+</body>
+
+</html>
